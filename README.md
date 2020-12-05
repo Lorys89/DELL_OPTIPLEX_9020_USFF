@@ -8,16 +8,16 @@ EFI for Dell Optiplex 9020 USFF with OpenCore bootloader
 
 | Component        | Brank                              |
 | ---------------- | ---------------------------------- |
-| CPU              | Intel i5 4570s                     |
+| CPU              | Intel i5 4570s (4C-4T 6MB HSW)     |
 | iGPU             | Intel® HD Graphics 4600            |
 | Lan              | Intel I217LM                       |
-| Wifi + BT        | Broadcom  4360                     |
+| Wifi + BT        | BCM94360HMB (AW-CB160H)            |
 | Audio            | Realtek ALC280                     |
 | Ram              | 8 GB DDR3 1600 Mhz                 |
-| SSD              | SAMSUNG 850 EVO 250 GB             |
-| SSD              | CRUCIAL BX500 120 GB              |
+| SSD              | SAMSUNG 850 EVO 250 GB (MACOS)     |
+| SSD              | CRUCIAL BX500 120 GB (WINDOWS)     |
 | SmBios           | Macmini 7,1                        |
-| BootLoader       | OpenCore 0.6.4                     |
+| BootLoader       | OpenCore                           |
 
 ![infobigsur](./Screenshot/infocacbigsur.png)
 
@@ -29,20 +29,25 @@ EFI for Dell Optiplex 9020 USFF with OpenCore bootloader
 
 ### What works and What doesn't or WIP:
 
-- [x] Intel HD Graphics 4600 iGPU HDMI Output
+- [x] Intel HD Graphics 4600 iGPU HDMI/DP Output
 - [x] ALC280 Internal Speakers
-- [x] ALC280 HDMI Audio Output
+- [x] ALC280 HDMI/DP Audio Output
+- [x] ALC280 jack microphone
+- [x] ALC280 jack headphones
 - [x] All USB Ports 
 - [x] SpeedStep / Sleep / Wake
 - [x] Intel I217LM LAN
-- [x] WIFI & BT
+- [x] Wi-Fi and Bluetooth BCM94360HMB (AW-CB160H) Module
+- [x] HID Key PWRB & SLPB 
+- [x] CONTROLLER SATA III
 - [x] NVRAM
-- [ ] VGA output (not compatible on macOS)
+- [x] Windows 10 boot from OpenCore
 
 ### Special Config:
 
 - Usb port mapping performed
-- Applied cosmetics PCI-DEV
+- SSDT-Hack Essential patch
+- Applied cosmetics PCI Dev
 
 See [ioreg](./ioregmac.ioreg) for more clarification
 
