@@ -1,4 +1,4 @@
-# Dell Optiplex 3060 MFF Hackintosh
+# Dell Optiplex 9020 USFF Hackintosh
 
 EFI for Dell Optiplex 9020 USFF with OpenCore bootloader
 
