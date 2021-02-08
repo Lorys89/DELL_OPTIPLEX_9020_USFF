@@ -22,7 +22,8 @@ EFI for Dell Optiplex 9020 USFF with OpenCore bootloader
 | SSD              | SAMSUNG 850 EVO 250 GB (MACOS)     |
 | SSD              | CRUCIAL BX500 120 GB (WINDOWS)     |
 | SmBios           | Macmini 7,1                        |
-| BootLoader       | OpenCore                           |
+| BootLoader       | OpenCore 0.6.6                     |
+| macOS            | Big Sur 11.3 (Beta)                |
 
 ![infomac](./Screenshot/infomac.png)
 
@@ -41,6 +42,8 @@ EFI for Dell Optiplex 9020 USFF with OpenCore bootloader
 - [x] ALC280 jack headphones
 - [x] All USB Ports 
 - [x] SpeedStep / Sleep / Wake
+- [x] All Sensors (CPU, SATA, FAN)
+- [x] Apple VTD
 - [x] Intel I217LM LAN
 - [x] Wi-Fi and Bluetooth BCM94360HMB (AW-CB160H) Module
 - [x] HID Key PWRB & SLPB 
@@ -55,6 +58,25 @@ EFI for Dell Optiplex 9020 USFF with OpenCore bootloader
 - Applied cosmetics PCI Dev
 
 See [ioreg](./ioregmac.ioreg) for more clarification
+
+### MacOS bootable USB creation:
+- Read the Dortania guide for creating your USB from Windows or macOS
+- [Guide Dortania](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/) - USB creation
+
+
+## Bios settings
+### Enable :
+* SATA Operation : AHCI
+* Fastboot : Thorough
+* Integrated NIC : Enable
+
+
+### Disable : 
+* Secure Boot
+* Computetrance
+* TPM
+* UEFI Network Stack
+* cfg lock and DVMT and unlock NVME gen3: DO AT YOUR OWN RISK!!! It may brick your laptop.
 
 ## Credits
 
