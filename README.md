@@ -76,7 +76,7 @@ See [ioreg](./ioregmac.ioreg) for more clarification
 * Computetrance
 * TPM
 * UEFI Network Stack
-* cfg lock and DVMT and unlock NVME gen3: DO AT YOUR OWN RISK!!! It may brick your laptop.
+* cfg lock and DVMT DO AT YOUR OWN RISK!!! It may brick your PC.
 
 ## Credits
 
