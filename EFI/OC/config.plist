@@ -90,8 +90,12 @@
 	<dict>
 		<key>MmioWhitelist</key>
 		<array/>
+		<key>Patch</key>
+		<array/>
 		<key>Quirks</key>
 		<dict>
+			<key>AllowRelocationBlock</key>
+			<false/>
 			<key>AvoidRuntimeDefrag</key>
 			<true/>
 			<key>DevirtualiseMmio</key>
@@ -132,6 +136,25 @@
 	<dict>
 		<key>Add</key>
 		<dict>
+			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
+			<dict>
+				<key>AAPL,ig-platform-id</key>
+				<data>AwAiDQ==</data>
+				<key>AAPL,slot-name</key>
+				<string>Built In</string>
+				<key>device-id</key>
+				<data>EgQAAA==</data>
+				<key>device_type</key>
+				<string>VGA compatible controller</string>
+				<key>disable-agdc</key>
+				<data>AAAAAA==</data>
+				<key>framebuffer-patch-enable</key>
+				<data>AQAAAA==</data>
+				<key>hda-gfx</key>
+				<string>onboard-1</string>
+				<key>model</key>
+				<string>Intel HD Graphics 4600</string>
+			</dict>
 			<key>PciRoot(0x0)/Pci(0x16,0x0)</key>
 			<dict>
 				<key>AAPL,slot-name</key>
@@ -172,25 +195,6 @@
 				<key>model</key>
 				<string>Intel Corporation, Series Chipset SATA Controller</string>
 			</dict>
-			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
-			<dict>
-				<key>AAPL,ig-platform-id</key>
-				<data>AwAiDQ==</data>
-				<key>AAPL,slot-name</key>
-				<string>Built In</string>
-				<key>device-id</key>
-				<data>EgQAAA==</data>
-				<key>device_type</key>
-				<string>VGA compatible controller</string>
-				<key>disable-agdc</key>
-				<data>AAAAAA==</data>
-				<key>framebuffer-patch-enable</key>
-				<data>AQAAAA==</data>
-				<key>hda-gfx</key>
-				<string>onboard-1</string>
-				<key>model</key>
-				<string>Intel HD Graphics 4600</string>
-			</dict>
 			<key>PciRoot(0x0)/Pci(0x3,0x0)</key>
 			<dict>
 				<key>AAPL,slot-name</key>
@@ -215,6 +219,8 @@
 			<dict>
 				<key>AAPL,slot-name</key>
 				<string>Built In</string>
+				<key>brcmfx-country</key>
+				<string>#a</string>
 				<key>device_type</key>
 				<string>AirPort Extreme</string>
 				<key>model</key>
@@ -311,6 +317,24 @@
 				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/AirportBrcmFixup</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>Any</string>
+				<key>BundlePath</key>
+				<string>AirportBrcmFixup.kext/Contents/PlugIns/AirPortBrcmNIC_Injector.kext</string>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string></string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -487,21 +511,21 @@
 			<key>AppleCpuPmCfgLock</key>
 			<false/>
 			<key>AppleXcpmCfgLock</key>
-			<true/>
+			<false/>
 			<key>AppleXcpmExtraMsrs</key>
 			<false/>
 			<key>AppleXcpmForceBoost</key>
 			<false/>
 			<key>CustomSMBIOSGuid</key>
-			<true/>
+			<false/>
 			<key>DisableIoMapper</key>
-			<true/>
+			<false/>
 			<key>DisableLinkeditJettison</key>
 			<true/>
 			<key>DisableRtcChecksum</key>
 			<false/>
 			<key>ExtendBTFeatureFlags</key>
-			<false/>
+			<true/>
 			<key>ExternalDiskIcons</key>
 			<false/>
 			<key>ForceSecureBootScheme</key>
@@ -516,6 +540,8 @@
 			<true/>
 			<key>PowerTimeoutKernelPanic</key>
 			<true/>
+			<key>SetApfsTrimTimeout</key>
+			<integer>-1</integer>
 			<key>ThirdPartyDrives</key>
 			<false/>
 			<key>XhciPortLimit</key>
@@ -524,9 +550,9 @@
 		<key>Scheme</key>
 		<dict>
 			<key>FuzzyMatch</key>
-			<true/>
+			<false/>
 			<key>KernelArch</key>
-			<string>x86_64</string>
+			<string>Auto</string>
 			<key>KernelCache</key>
 			<string>Auto</string>
 		</dict>
@@ -543,12 +569,18 @@
 			<string>None</string>
 			<key>HideAuxiliary</key>
 			<true/>
+			<key>LauncherOption</key>
+			<string>Full</string>
+			<key>LauncherPath</key>
+			<string>Default</string>
 			<key>PickerAttributes</key>
 			<integer>1</integer>
 			<key>PickerAudioAssist</key>
 			<false/>
 			<key>PickerMode</key>
 			<string>External</string>
+			<key>PickerVariant</key>
+			<string>Auto</string>
 			<key>PollAppleHotKeys</key>
 			<true/>
 			<key>ShowPicker</key>
@@ -592,6 +624,8 @@
 				<string>CustomOS</string>
 				<key>Path</key>
 				<string>PciRoot(0x0)/Pci(0x1,0x1)/Pci(0x0,0x0)/NVMe(0x1,11-22-33-44-55-66-77-88)/HD(1,GPT,00000000-0000-0000-0000-000000000000,0x800,0x64000)/\EFI\BOOT\BOOTX64.EFI</string>
+				<key>TextMode</key>
+				<false/>
 			</dict>
 		</array>
 		<key>Security</key>
@@ -604,8 +638,8 @@
 			<integer>0</integer>
 			<key>AuthRestart</key>
 			<false/>
-			<key>BootProtect</key>
-			<string>None</string>
+			<key>BlacklistAppleUpdate</key>
+			<true/>
 			<key>DmgLoading</key>
 			<string>Signed</string>
 			<key>EnablePassword</key>
@@ -618,15 +652,70 @@
 			<data></data>
 			<key>PasswordSalt</key>
 			<data></data>
-			<key>SecureBootModel</key>
-			<string>Disabled</string>
 			<key>ScanPolicy</key>
 			<integer>0</integer>
+			<key>SecureBootModel</key>
+			<string>Disabled</string>
 			<key>Vault</key>
 			<string>Optional</string>
 		</dict>
 		<key>Tools</key>
-		<array/>
+		<array>
+			<dict>
+				<key>Arguments</key>
+				<string></string>
+				<key>Auxiliary</key>
+				<true/>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>Name</key>
+				<string>VerifyMsrE2</string>
+				<key>Path</key>
+				<string>VerifyMsrE2.efi</string>
+				<key>RealPath</key>
+				<false/>
+				<key>TextMode</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<string></string>
+				<key>Auxiliary</key>
+				<true/>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>Name</key>
+				<string>modGRUBShell</string>
+				<key>Path</key>
+				<string>modGRUBShell.efi</string>
+				<key>RealPath</key>
+				<false/>
+				<key>TextMode</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<string></string>
+				<key>Auxiliary</key>
+				<true/>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>Name</key>
+				<string>OpenShell</string>
+				<key>Path</key>
+				<string>OpenShell.efi</string>
+				<key>RealPath</key>
+				<false/>
+				<key>TextMode</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>NVRAM</key>
 	<dict>
@@ -644,7 +733,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>-V brcmfx-country=#a</string>
+				<string>-v</string>
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
 				<key>prev-lang:kbd</key>
@@ -704,70 +793,28 @@
 		<true/>
 		<key>CustomMemory</key>
 		<false/>
-		<key>DataHub</key>
-		<dict>
-			<key>ARTFrequency</key>
-			<integer>0</integer>
-			<key>BoardProduct</key>
-			<string>Mac-35C5E08120C7EEAF</string>
-			<key>BoardRevision</key>
-			<data></data>
-			<key>DevicePathsSupported</key>
-			<integer>0</integer>
-			<key>FSBFrequency</key>
-			<integer>0</integer>
-			<key>InitialTSC</key>
-			<integer>0</integer>
-			<key>PlatformName</key>
-			<string></string>
-			<key>SmcBranch</key>
-			<data>ajY0AAAAAAA=</data>
-			<key>SmcPlatform</key>
-			<data>ajY0AAAAAAA=</data>
-			<key>SmcRevision</key>
-			<data>AiQPAAAy</data>
-			<key>StartupPowerEvents</key>
-			<integer>0</integer>
-			<key>SystemProductName</key>
-			<string>Macmini7,1</string>
-			<key>SystemSerialNumber</key>
-			<string>C02M7QYGG1J0</string>
-			<key>SystemUUID</key>
-			<string>220BA661-7F61-415C-820E-18207BC3FF4A</string>
-		</dict>
 		<key>Generic</key>
 		<dict>
 			<key>AdviseWindows</key>
 			<false/>
+			<key>MaxBIOSVersion</key>
+			<false/>
 			<key>MLB</key>
-			<string>C024067004NG0MCJA</string>
+			<string>C02424600CDG0MC1H</string>
 			<key>ProcessorType</key>
 			<integer>0</integer>
-			<key>SystemMemoryStatus</key>
-			<string>Upgradable</string>
 			<key>ROM</key>
 			<data>ESIzRFVm</data>
 			<key>SpoofVendor</key>
 			<false/>
+			<key>SystemMemoryStatus</key>
+			<string>Upgradable</string>
 			<key>SystemProductName</key>
 			<string>Macmini7,1</string>
 			<key>SystemSerialNumber</key>
-			<string>C02M7QYGG1J0</string>
+			<string>C02MVBZGG1J0</string>
 			<key>SystemUUID</key>
-			<string>220BA661-7F61-415C-820E-18207BC3FF4A</string>
-		</dict>
-		<key>PlatformNVRAM</key>
-		<dict>
-			<key>BID</key>
-			<string>Mac-35C5E08120C7EEAF</string>
-			<key>FirmwareFeatures</key>
-			<data>N/UD+AAAAAA=</data>
-			<key>FirmwareFeaturesMask</key>
-			<data>N/8D+AAAAAA=</data>
-			<key>MLB</key>
-			<string>C024067004NG0MCJA</string>
-			<key>ROM</key>
-			<data>ESIzRFVm</data>
+			<string>03032398-D028-4F26-A3D4-53AC1707A193</string>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>
@@ -776,7 +823,9 @@
 		<key>UpdateSMBIOS</key>
 		<true/>
 		<key>UpdateSMBIOSMode</key>
-		<string>Custom</string>
+		<string>Create</string>
+		<key>UseRawUuidEncoding</key>
+		<false/>
 	</dict>
 	<key>UEFI</key>
 	<dict>
@@ -808,7 +857,9 @@
 			<key>MinimumVolume</key>
 			<integer>20</integer>
 			<key>PlayChime</key>
-			<false/>
+			<string>Auto</string>
+			<key>SetupDelay</key>
+			<integer>0</integer>
 			<key>VolumeAmplifier</key>
 			<integer>0</integer>
 		</dict>
@@ -816,10 +867,9 @@
 		<true/>
 		<key>Drivers</key>
 		<array>
-			<string>AudioDxe.efi</string>
 			<string>OpenRuntime.efi</string>
 			<string>OpenCanopy.efi</string>
-			<string>HFSPlus.efi</string>
+			<string>OpenHfsPlus.efi</string>
 		</array>
 		<key>Input</key>
 		<dict>
@@ -910,8 +960,8 @@
 		</dict>
 		<key>Quirks</key>
 		<dict>
-			<key>DeduplicateBootOrder</key>
-			<true/>
+			<key>DisableSecurityPolicy</key>
+			<false/>
 			<key>ExitBootServicesDelay</key>
 			<integer>0</integer>
 			<key>IgnoreInvalidFlexRatio</key>
