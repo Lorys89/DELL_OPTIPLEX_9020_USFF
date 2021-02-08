@@ -82,12 +82,13 @@ See [ioreg](./ioregmac.ioreg) for more clarification
 ## Restart and at the opencore GUI, choose the modGRUBShell.efi
 
 ![CFG-LOCK](./Screenshot/CFG-LOCK.png)
-
+For set CFG LOCK Disabled 
+setup_var 0xDA2 0x00
 
 ![DMT-PRE](./Screenshot/DVMT-PRE.png)
+For set DVMT PRE Allocated to 64 MB
+setup_var 0x263 0x02
 
-
-![DMT-TOT](./Screenshot/DVMT-TOT.png)
 
 
 ## Credits
@@ -97,4 +98,4 @@ See [ioreg](./ioregmac.ioreg) for more clarification
 - [Dortania](https://dortania.github.io/OpenCore-Install-Guide/config-laptop.plist/icelake.html) For great and detailed guides.
 - [Hackintoshlifeit](https://github.com/Hackintoshlifeit) Support group for installation and post installation.
 
-# If you need help please contact us on [Telegram](https://t.me/HackintoshLife_it) or [Web](https://www.hackintoshlife.it/)
+# If you need help please contact us on [Telegram](https://t.me/HackintoshLife_it) or [Web](https://www.hackintoshlife.it/)c
