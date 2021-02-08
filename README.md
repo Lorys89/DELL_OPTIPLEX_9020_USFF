@@ -78,6 +78,18 @@ See [ioreg](./ioregmac.ioreg) for more clarification
 * UEFI Network Stack
 * cfg lock and DVMT DO AT YOUR OWN RISK!!! It may brick your PC.
 
+
+## Restart and at the opencore GUI, choose the modGRUBShell.efi
+
+![CFG-LOCK](./Screenshot/CFG-LOCK.png)
+
+
+![DMT-PRE](./Screenshot/DVMT-PRE.png)
+
+
+![DMT-TOT](./Screenshot/DVMT-TOT.png)
+
+
 ## Credits
 
 - [Apple](https://apple.com) for macOS;
