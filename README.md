@@ -67,15 +67,15 @@ See [ioreg](./ioregmac.ioreg) for more clarification
 ## Bios settings
 ### Enable :
 * SATA Operation : AHCI
-* Fastboot : Thorough
 * Integrated NIC : Enable
-
 
 ### Disable : 
 * Secure Boot
-* Computetrance
-* TPM
-* UEFI Network Stack
+* Serial Port
+* Enable UEFI Network stack
+* Computrace
+* TPM Security
+* ASPM
 * cfg lock and DVMT DO AT YOUR OWN RISK!!! It may brick your PC.
 
 
