@@ -24,7 +24,7 @@ EFI for Dell Optiplex 9020 USFF with OpenCore bootloader
 | SmBios           | Macmini 7,1                        |
 | BootLoader       | OpenCore                           |
 
-![infobigsur](./Screenshot/infocacbigsur.png)
+![infomac](./Screenshot/infomac.png)
 
 ## Peripherals
 
