@@ -83,12 +83,14 @@ See [ioreg](./ioregmac.ioreg) for more clarification
 
 ![CFG-LOCK](./Screenshot/CFG-LOCK.png)
 
-For set CFG LOCK Disabled 
+For set CFG LOCK Disabled
+
 setup_var 0xDA2 0x00
 
 ![DMT-PRE](./Screenshot/DVMT-PRE.png)
 
 For set DVMT PRE Allocated to 64 MB
+
 setup_var 0x263 0x02
 
 
