@@ -33,7 +33,6 @@ EFI for Dell Optiplex 9020 USFF with OpenCore bootloader
 
 ![infohack](./Screenshot/hackintooldevice.png)
 ![infodp2](./Screenshot/DpciScreen2.png)
-![infopci](./Screenshot/PCISEZ.png)
 
 ### What works and What doesn't or WIP:
 
@@ -56,8 +55,6 @@ EFI for Dell Optiplex 9020 USFF with OpenCore bootloader
 ### Special Config:
 
 - Usb port mapping performed
-- SSDT-Hack Essential patch
-- Applied cosmetics PCI Dev
 
 See [ioreg](./ioregmac.ioreg) for more clarification
 
@@ -103,5 +100,3 @@ setup_var 0x263 0x02
 - [Acidanthera](https://github.com/acidanthera) for OpenCore and all the lovely hackintosh work.
 - [Dortania](https://dortania.github.io/OpenCore-Install-Guide/config-laptop.plist/icelake.html) For great and detailed guides.
 - [Hackintoshlifeit](https://github.com/Hackintoshlifeit) Support group for installation and post installation.
-
-# If you need help please contact us on [Telegram](https://t.me/HackintoshLife_it) or [Web](https://www.hackintoshlife.it/)c
