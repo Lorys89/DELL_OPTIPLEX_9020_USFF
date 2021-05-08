@@ -5,20 +5,20 @@
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of iASLPNxWt4.aml, Wed Apr  7 16:10:50 2021
+ * Disassembly of iASLAjbiYT.aml, Sat May  8 11:18:13 2021
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x000003E4 (996)
+ *     Length           0x00000346 (838)
  *     Revision         0x02
- *     Checksum         0xC6
- *     OEM ID           "HACK"
- *     OEM Table ID     "DELL"
+ *     Checksum         0xA6
+ *     OEM ID           "DELL"
+ *     OEM Table ID     "9020USFF"
  *     OEM Revision     0x00001000 (4096)
  *     Compiler ID      "INTL"
  *     Compiler Version 0x20200925 (538970405)
  */
-DefinitionBlock ("", "SSDT", 2, "HACK", "DELL", 0x00001000)
+DefinitionBlock ("", "SSDT", 2, "DELL", "9020USFF", 0x00001000)
 {
     External (_PR_.CPU0, ProcessorObj)
     External (_SB_.PCI0, DeviceObj)
@@ -30,127 +30,6 @@ DefinitionBlock ("", "SSDT", 2, "HACK", "DELL", 0x00001000)
     External (_SB_.PCI0.XHC_, DeviceObj)
     External (PTX_, MethodObj)    // 0 Arguments
     External (WAX_, MethodObj)    // 0 Arguments
-
-    Scope (\_SB)
-    {
-        Device (SLPB)
-        {
-            Name (_HID, EisaId ("PNP0C0E") /* Sleep Button Device */)  // _HID: Hardware ID
-            Method (_STA, 0, NotSerialized)  // _STA: Status
-            {
-                If (_OSI ("Darwin"))
-                {
-                    Return (0x0B)
-                }
-                Else
-                {
-                    Return (Zero)
-                }
-            }
-        }
-
-        Scope (PCI0)
-        {
-            Device (MCHC)
-            {
-                Name (_ADR, Zero)  // _ADR: Address
-                Method (_STA, 0, NotSerialized)  // _STA: Status
-                {
-                    If (_OSI ("Darwin"))
-                    {
-                        Return (0x0F)
-                    }
-                    Else
-                    {
-                        Return (Zero)
-                    }
-                }
-            }
-
-            Scope (XHC)
-            {
-                Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-                {
-                    If ((Arg2 == Zero))
-                    {
-                        Return (Buffer (One)
-                        {
-                             0x03                                             // .
-                        })
-                    }
-
-                    Return (Package (0x12)
-                    {
-                        "AAPL,slot-name", 
-                        "Built In", 
-                        "name", 
-                        "Intel XHC Controller", 
-                        "model", 
-                        Buffer (0x3B)
-                        {
-                            "Intel Corporation, Series Chipset USB xHCI Host Controller"
-                        }, 
-
-                        "device_type", 
-                        Buffer (0x0F)
-                        {
-                            "USB Controller"
-                        }, 
-
-                        "AAPL,current-available", 
-                        0x0834, 
-                        "AAPL,current-extra", 
-                        0x0898, 
-                        "AAPL,current-extra-in-sleep", 
-                        0x0640, 
-                        "AAPL,device-internal", 
-                        0x02, 
-                        "AAPL,max-port-current-in-sleep", 
-                        0x0834
-                    })
-                }
-            }
-
-            Scope (LPCB)
-            {
-                Device (EC)
-                {
-                    Name (_HID, "ACID0001")  // _HID: Hardware ID
-                    Method (_STA, 0, NotSerialized)  // _STA: Status
-                    {
-                        If (_OSI ("Darwin"))
-                        {
-                            Return (0x0F)
-                        }
-                        Else
-                        {
-                            Return (Zero)
-                        }
-                    }
-                }
-
-                Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-                {
-                    If ((Arg2 == Zero))
-                    {
-                        Return (Buffer (One)
-                        {
-                             0x03                                             // .
-                        })
-                    }
-
-                    Return (Package (0x02)
-                    {
-                        "compatible", 
-                        Buffer (0x0D)
-                        {
-                            "pci8086,9c43"
-                        }
-                    })
-                }
-            }
-        }
-    }
 
     Scope (\)
     {
@@ -171,29 +50,134 @@ DefinitionBlock ("", "SSDT", 2, "HACK", "DELL", 0x00001000)
                 EH2D = One
             }
         }
-    }
 
-    Scope (\_PR)
-    {
-        Scope (CPU0)
+        Scope (_SB)
         {
-            If (_OSI ("Darwin"))
+            Device (SLPB)
             {
-                Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+                Name (_HID, EisaId ("PNP0C0E") /* Sleep Button Device */)  // _HID: Hardware ID
+                Method (_STA, 0, NotSerialized)  // _STA: Status
                 {
-                    If ((Arg2 == Zero))
+                    If (_OSI ("Darwin"))
                     {
-                        Return (Buffer (One)
+                        Return (0x0B)
+                    }
+                    Else
+                    {
+                        Return (Zero)
+                    }
+                }
+            }
+
+            Scope (PCI0)
+            {
+                Device (MCHC)
+                {
+                    Name (_ADR, Zero)  // _ADR: Address
+                    Method (_STA, 0, NotSerialized)  // _STA: Status
+                    {
+                        If (_OSI ("Darwin"))
                         {
-                             0x03                                             // .
+                            Return (0x0F)
+                        }
+                        Else
+                        {
+                            Return (Zero)
+                        }
+                    }
+                }
+
+                Scope (XHC)
+                {
+                    Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+                    {
+                        If ((Arg2 == Zero))
+                        {
+                            Return (Buffer (One)
+                            {
+                                 0x03                                             // .
+                            })
+                        }
+
+                        Return (Package (0x0A)
+                        {
+                            "AAPL,current-available", 
+                            0x0834, 
+                            "AAPL,current-extra", 
+                            0x0898, 
+                            "AAPL,current-extra-in-sleep", 
+                            0x0640, 
+                            "AAPL,device-internal", 
+                            0x02, 
+                            "AAPL,max-port-current-in-sleep", 
+                            0x0834
                         })
                     }
+                }
 
-                    Return (Package (0x02)
+                Scope (LPCB)
+                {
+                    Device (EC)
                     {
-                        "plugin-type", 
-                        One
-                    })
+                        Name (_HID, "ACID0001")  // _HID: Hardware ID
+                        Method (_STA, 0, NotSerialized)  // _STA: Status
+                        {
+                            If (_OSI ("Darwin"))
+                            {
+                                Return (0x0F)
+                            }
+                            Else
+                            {
+                                Return (Zero)
+                            }
+                        }
+                    }
+
+                    Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+                    {
+                        If ((Arg2 == Zero))
+                        {
+                            Return (Buffer (One)
+                            {
+                                 0x03                                             // .
+                            })
+                        }
+
+                        Return (Package (0x02)
+                        {
+                            "compatible", 
+                            Buffer (0x0D)
+                            {
+                                "pci8086,9c43"
+                            }
+                        })
+                    }
+                }
+            }
+        }
+
+        Scope (_PR)
+        {
+            Scope (CPU0)
+            {
+                If (_OSI ("Darwin"))
+                {
+                    Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+                    {
+                        If ((Arg2 == Zero))
+                        {
+                            Return (Buffer (One)
+                            {
+                                 0x03                                             // .
+                            })
+                        }
+
+                        Return (Package (0x02)
+                        {
+                            "plugin-type", 
+                            One
+                        })
+                    }
                 }
             }
         }
