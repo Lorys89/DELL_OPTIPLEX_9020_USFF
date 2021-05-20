@@ -25,7 +25,7 @@ EFI for Dell Optiplex 9020 USFF with OpenCore bootloader
 | SSD              | CRUCIAL BX500 120 GB (WINDOWS)     |
 | SmBios           | Macmini 7,1                        |
 | BootLoader       | OpenCore 0.6.9                     |
-| macOS            | Big Sur 11.4 (Beta 2)              |
+| macOS            | Big Sur 11.5 (Beta 1)              |
 
 ![infomac](./Screenshot/infomac.png)
 
