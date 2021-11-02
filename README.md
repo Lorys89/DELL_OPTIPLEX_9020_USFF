@@ -22,10 +22,10 @@ EFI for Dell Optiplex 9020 USFF with OpenCore bootloader
 | Audio            | Realtek ALC280                     |
 | Ram              | 8 GB DDR3 1600 Mhz                 |
 | SSD              | SAMSUNG 850 EVO 250 GB (MACOS)     |
-| SSD              | CRUCIAL BX500 120 GB (WINDOWS)     |
-| SmBios           | Macmini 7,1                        |
-| BootLoader       | OpenCore 0.6.9                     |
-| macOS            | Big Sur 11.5 (Beta 1)              |
+| SSD              | CRUCIAL BX500 120 GB (WINDOWS 11)  |
+| SmBios           | iMac 16,1                          |
+| BootLoader       | OpenCore 0.7.5                     |
+| macOS            | Monterey 12.0.1                    |
 
 ![infomac](./Screenshot/infomac.png)
 
@@ -44,13 +44,12 @@ EFI for Dell Optiplex 9020 USFF with OpenCore bootloader
 - [x] All USB Ports 
 - [x] SpeedStep / Sleep / Wake
 - [x] All Sensors (CPU, SATA, FAN)
-- [x] Apple VTD
 - [x] Intel I217LM LAN
 - [x] Wi-Fi and Bluetooth BCM94360HMB (AW-CB160H) Module
 - [x] HID Key PWRB & SLPB 
 - [x] CONTROLLER SATA III
 - [x] NVRAM
-- [x] Windows 10 boot from OpenCore
+- [x] Windows 11 boot from OpenCore
 
 ### Special Config:
 
