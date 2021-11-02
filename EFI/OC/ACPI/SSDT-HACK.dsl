@@ -5,20 +5,20 @@
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of iASLAjbiYT.aml, Sat May  8 11:18:13 2021
+ * Disassembly of iASL9Eu8tk.aml, Tue Nov  2 08:44:23 2021
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x00000346 (838)
+ *     Length           0x0000028C (652)
  *     Revision         0x02
- *     Checksum         0xA6
- *     OEM ID           "DELL"
- *     OEM Table ID     "9020USFF"
+ *     Checksum         0xB0
+ *     OEM ID           "HACK"
+ *     OEM Table ID     "Hack"
  *     OEM Revision     0x00001000 (4096)
  *     Compiler ID      "INTL"
  *     Compiler Version 0x20200925 (538970405)
  */
-DefinitionBlock ("", "SSDT", 2, "DELL", "9020USFF", 0x00001000)
+DefinitionBlock ("", "SSDT", 2, "HACK", "Hack", 0x00001000)
 {
     External (_PR_.CPU0, ProcessorObj)
     External (_SB_.PCI0, DeviceObj)
@@ -27,6 +27,8 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "9020USFF", 0x00001000)
     External (_SB_.PCI0.LPCB.SWAK, MethodObj)    // 1 Arguments
     External (_SB_.PCI0.NPTS, MethodObj)    // 1 Arguments
     External (_SB_.PCI0.NWAK, MethodObj)    // 1 Arguments
+    External (_SB_.PCI0.SAT0, DeviceObj)
+    External (_SB_.PCI0.SBUS, DeviceObj)
     External (_SB_.PCI0.XHC_, DeviceObj)
     External (PTX_, MethodObj)    // 0 Arguments
     External (WAX_, MethodObj)    // 0 Arguments
@@ -87,34 +89,6 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "9020USFF", 0x00001000)
                     }
                 }
 
-                Scope (XHC)
-                {
-                    Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-                    {
-                        If ((Arg2 == Zero))
-                        {
-                            Return (Buffer (One)
-                            {
-                                 0x03                                             // .
-                            })
-                        }
-
-                        Return (Package (0x0A)
-                        {
-                            "AAPL,current-available", 
-                            0x0834, 
-                            "AAPL,current-extra", 
-                            0x0898, 
-                            "AAPL,current-extra-in-sleep", 
-                            0x0640, 
-                            "AAPL,device-internal", 
-                            0x02, 
-                            "AAPL,max-port-current-in-sleep", 
-                            0x0834
-                        })
-                    }
-                }
-
                 Scope (LPCB)
                 {
                     Device (EC)
@@ -131,26 +105,6 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "9020USFF", 0x00001000)
                                 Return (Zero)
                             }
                         }
-                    }
-
-                    Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-                    {
-                        If ((Arg2 == Zero))
-                        {
-                            Return (Buffer (One)
-                            {
-                                 0x03                                             // .
-                            })
-                        }
-
-                        Return (Package (0x02)
-                        {
-                            "compatible", 
-                            Buffer (0x0D)
-                            {
-                                "pci8086,9c43"
-                            }
-                        })
                     }
                 }
             }
