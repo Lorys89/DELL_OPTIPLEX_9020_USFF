@@ -22,7 +22,7 @@
         <string>1.0</string>
         <key>IOKitPersonalities</key>
         <dict>
-            <key>iMac16,1-XHC</key>
+            <key>iMac15,1-XHC</key>
             <dict>
                 <key>CFBundleIdentifier</key>
                 <string>com.apple.driver.AppleUSBMergeNub</string>
@@ -152,7 +152,7 @@
                     </dict>
                 </dict>
                 <key>model</key>
-                <string>iMac16,1</string>
+                <string>iMac15,1</string>
             </dict>
         </dict>
         <key>OSBundleRequired</key>
