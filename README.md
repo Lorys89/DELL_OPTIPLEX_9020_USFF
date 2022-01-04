@@ -23,9 +23,9 @@ EFI for Dell Optiplex 9020 USFF with OpenCore bootloader
 | Ram              | 8 GB DDR3 1600 Mhz                 |
 | SSD              | SAMSUNG 850 EVO 250 GB (MACOS)     |
 | SSD              | CRUCIAL BX500 120 GB (WINDOWS 11)  |
-| SmBios           | iMac 16,1                          |
+| SmBios           | iMac 15,1                          |
 | BootLoader       | OpenCore 0.7.5                     |
-| macOS            | Monterey 12.0.1                    |
+| macOS            | Big Sur 11.6.2                     |
 
 ![infomac](./Screenshot/infomac.png)
 
