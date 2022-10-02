@@ -1,5 +1,5 @@
 [![](https://img.shields.io/badge/EFI-Release-informational?style=flat&logo=apple&logoColor=white&color=9debeb)](https://github.com/Lorys89/DELL_OPTIPLEX_9020_USFF/releases)
-[![](https://img.shields.io/badge/Telegram-HackintoshLifeIT-informational?style=flat&logo=telegram&logoColor=white&color=5fb659)](https://t.me/HackintoshLife_it)
+
 
 # Dell Optiplex 9020 USFF Hackintosh
 
@@ -93,5 +93,3 @@ setup_var 0x263 0x02
 
 - [Apple](https://apple.com) for macOS;
 - [Acidanthera](https://github.com/acidanthera) for OpenCore and all the lovely hackintosh work.
-- [Dortania](https://dortania.github.io/OpenCore-Install-Guide/config-laptop.plist/icelake.html) For great and detailed guides.
-- [Hackintoshlifeit](https://github.com/Hackintoshlifeit) Support group for installation and post installation.
